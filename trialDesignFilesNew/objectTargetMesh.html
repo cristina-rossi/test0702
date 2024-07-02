@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>   </title>
+</head>
+<body>
+<form class="tabcontent">      
+<div class="form-control">         
+<inputcolumn>
+        
+<!-- Content: --> 
+ 
+
+
+
+
+ 
+<name> Target Visual Mesh </name>
+    
+<name>Mesh position offset wrt target center [meters]:</name>
+    <inputs>
+    <label for="TARGETMESH_OFFSET_X">X:</label>
+    <input id="TARGETMESH_OFFSET_X" name="setupScript,targetMeshPositionOffsetX" type="number" value="0" />
+    <label for="TARGETMESH_OFFSET_Y">Y:</label>
+    <input id="TARGETMESH_OFFSET_Y" name="setupScript,targetMeshPositionOffsetY" type="number" value="0" />
+    <label for="TARGETMESH_OFFSET_Z">Z:</label>
+    <input id="TARGETMESH_OFFSET_Z" name="setupScript,targetMeshPositionOffsetZ" type="number" value="0" />
+    </inputs>   
+    <note>Offset of the visual mesh wrt to actual target position (that set in Task tab)</note>  
+    <br><br><br>
+
+<name style="vertical-align: top;">Mesh size:</name>
+        <inputs>	<span style='font-size:15px;'>&#8594;</span> 		        
+        <label> &nbsp;Automatic - match to:</label> 
+            <br>
+            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input id="TARGETMESH_SIZE_AUTO_PT" name="setupScript,targetMeshSizeAuto" type="radio" value="platePlusTarget" checked >
+            <label for="TARGETMESH_SIZE_AUTO_PT">Target size: entire plate must lay within mesh for success</label> 
+            <br>
+            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input id="TARGETMESH_SIZE_AUTO_CT" name="setupScript,targetMeshSizeAuto" type="radio" value="centerTarget" >
+            <label for="TARGETMESH_SIZE_AUTO_CT">Target size: plate center must lay within mesh for success</label> 
+            <br>
+            <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input id="TARGETMESH_SIZE_AUTO_P" name="setupScript,targetMeshSizeAuto" type="radio" value="plate"  >
+            <label for="TARGETMESH_SIZE_AUTO_P">Plate size: mesh shows ideal plate position, at target center</label> 
+            <br>
+            <span style='font-size:15px;'>&#8594;</span> 	
+        
+        <input style='margin-left: 0px;' id="TARGETMESH_SIZE_AUTO_N" name="setupScript,targetMeshSizeAuto" type="radio" value="none">
+        <label for="TARGETMESH_SIZE_AUTO_N">Manual [meters]: </label> 
+            <label for="TARGETMESH_SIZE_X">X:</label>
+            <input id="TARGETMESH_SIZE_X" name="setupScript,targetMeshSizeX" type="number" value="0.2" />
+            <label for="TARGETMESH_SIZE_Y">Y:</label>
+            <input id="TARGETMESH_SIZE_Y" name="setupScript,targetMeshSizeY" type="number" value="0.005" />
+            <label for="TARGETMESH_SIZE_Z">Z:</label>
+            <input id="TARGETMESH_SIZE_Z" name="setupScript,targetMeshSizeZ" type="number" value="0.2" />
+            </inputs> 
+            <br><br><br><br> 
+    
+    
+<name>Mesh shape:</name>
+    <inputs>		    
+    <input id="TARGETMESH_SHAPE_CU" name="setupScript,targetMeshShape" type="radio" value="Cube" checked>
+    <label for="TARGETMESH_SHAPE_CU">Cube</label> 
+    <input id="TARGETMESH_SHAPE_CY" name="setupScript,targetMeshShape" type="radio" value="Cylinder">
+    <label for="TARGETMESH_SHAPE_CY">Cylinder</label> 
+    <input id="TARGETMESH_SHAPE_CA" name="setupScript,targetMeshShape" type="radio" value="Capsule"  >
+    <label for="TARGETMESH_SHAPE_CA" >Capsule</label> 
+    <input id="TARGETMESH_SHAPE_SP" name="setupScript,targetMeshShape" type="radio" value="Sphere">
+    <label for="TARGETMESH_SHAPE_SP">Sphere</label> 
+    <br>
+    <input id="TARGETMESH_SHAPE_PL" name="setupScript,targetMeshShape" type="radio" value="Plate">
+    <label for="TARGETMESH_SHAPE_PL">Plate</label> 
+    <input id="TARGETMESH_SHAPE_PG" name="setupScript,targetMeshShape" type="radio" value="PlateAndGrape">
+    <label for="TARGETMESH_SHAPE_PG">Plate+Grape</label> 
+    </inputs> 
+ 
+
+    
+    
+ 
+<!-- End of Content --> 
+ 
+</inputcolumn> 
+</div>  
+<figurecolumn>
+ <!-- <img src="trialDesignFiles/figures/paradigmSmall-01.png"  style="width:100%"> --> 
+</figurecolumn>
+        
+</form>
+</body>
+</html>

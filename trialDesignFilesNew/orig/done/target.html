@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target Object</title>
+</head>
+<body>
+<form class="tabcontent"> 
+        
+        
+        
+        
+
+        <!-- TARGET-->
+    		  <inputdivider> Target </inputdivider>	
+		  <inputcolumn>
+		    <div class="form-control">      
+          
+		    
+   		    <note></note>     	
+   		    <note></note>     
+          
+		    </div>
+
+ 
+        </inputcolumn>   
+  
+		   <figurecolumn>
+			<img src="trialDesignFiles/figures/targetPositionCriteria.png"  style="width:100%">
+		   </figurecolumn>
+      <!-- Expandable Workspace -->
+ 
+       <button class="expand-button"  type="button" onclick="toggleExpandableWindow(this,'expandableWorkspace')">
+        &nbsp;Expand failure criteria -> workspace
+        </button>
+ 
+        <inputcolumn>
+        <div class="expwindow" id="expandableWorkspace">	 
+      
+      </div>  <!-- expand/collapse the window -->
+     </inputcolumn>
+
+ <!-- Expandable gamearea -->
+ 
+       <button class="expand-button"  type="button" onclick="toggleExpandableWindow(this,'expandableGamearea')">
+        &nbsp;Expand failure criteria -> falls
+        </button>
+ 
+        <inputcolumn>
+        <div class="expwindow" id="expandableGamearea">	 
+		
+
+      </div>  <!-- expand/collapse the window -->
+     </inputcolumn>
+
+
+ <!-- Expandable time limits -->
+ 
+       <button class="expand-button"  type="button" onclick="toggleExpandableWindow(this,'expandableTimelimits')">
+        &nbsp;Expand failure criteria -> time limits
+        </button>
+ 
+        <inputcolumn>
+        <div class="expwindow" id="expandableTimelimits">	 
+
+
+
+      </div>  <!-- expand/collapse the window -->
+     </inputcolumn>
+
+    		  <inputdivider> Colors </inputdivider>
+  <inputcolumn>
+
+ 
+  </inputcolumn>
+
+	<figurecolumn>
+    		<img src="trialDesignFiles/figures/feedback.png"  style="width:100%">
+	</figurecolumn>
+              
+          
+              
+  </inputcolumn>
+
+        
+</form>
+</body>
+</html>
