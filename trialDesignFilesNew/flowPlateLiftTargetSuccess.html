@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Plate Lift </title>
+</head>
+<body>
+<form class="tabcontent">      
+<div class="form-control">         
+<inputcolumn>
+        
+<!-- Content: --> 
+ 
+ 
+    
+<name>This stage ends when target is reached or other failure criteria occur</name>
+    
+<name>Target is "reached" when: </name>
+
+<!-- target collider size  -->		
+<name> - - - > Target size [meters]</name>
+    <inputs> 
+    <label for="TARGETSIZE_X">X:</label>
+    <input id="TARGETSIZE_X" name="setupScript,targetSizeX" type="number" value="0.1" />
+    <label for="TARGETSIZE_Y">Y:</label>
+    <input id="TARGETSIZE_Y" name="setupScript,targetSizeY" type="number" value="0.1" />
+    <label for="TARGETSIZE_Z">Z:</label>
+    <input id="TARGETSIZE_Z" name="setupScript,targetSizeZ" type="number" value="0.1" />   
+    <note>Target is reached when the distance between plate center and target position is less than "target size".</note> 
+    </inputs>
+    <note></note>     
+
+
+<name>Success criteria upon reaching target:</name><note></note>     
+    
+<!-- max plate tilt for success -->       	
+<name> - - - > Max plate tilt at target [deg]</name>
+    <inputs> 
+    <label for="MAXTILT_X">X (front-back):</label>
+    <input id="MAXTILT_X" name="targetScript,maxTiltForSuccessX" type="number" value="180" />
+    <label for="MAXTILT_Y">Y (flat rotation):</label>
+    <input id="MAXTILT_Y" name="targetScript,maxTiltForSuccessY" type="number" value="180" />
+    <label for="MAXTILT_Z">Z (left-right):</label>
+    <input id="MAXTILT_Z" name="targetScript,maxTiltForSuccessZ" type="number" value="30" />
+    </inputs> 
+    <note>(Instant failure if the plate tilt/rotation is greater than what specified)</note> <note></note>   
+
+  
+<name> - - - > Time in target for success [seconds]</name>
+    <inputs>
+    <label for="TIME_IN_TARGET"></label>
+    <input id="TIME_IN_TARGET" name="targetScript,timeInTargetForSuccess" type="number" value="0.1" />
+    </inputs>
+    <note>(Success if plate position and tilt criteria remain true for specified amount of time)</note>
+    <note>(Instant failure if these criteria become unmet after the target has been reached)</note> 
+    <note>(i.e., if the plate becomes too tilted / exits target region before "time in target for success" has passed) </note> 	
+    <br><br><br>
+
+ 
+
+   <br><br><note>Additional time limit criteria defined in "time limits" tab.</note>    
+    
+<!--      
+<name>Additional failure criteria:</name><note></note>  
+    
+<name> - - - > Time limit for "plate lift" stage</name>
+    <inputs>  
+    <input id="MAXTIME_4" name="trialScript,stage4_maxTime" type="number" value="60" />
+    <label for="MAXTIME_4"> [seconds] </label>
+    </inputs>
+    <note>Going over time limit will also trigger a failed trial. </note>
+--> 
+ 
+<!-- End of Content --> 
+ 
+</inputcolumn> 
+</div>  
+<figurecolumn>
+ <!-- <img src="trialDesignFiles/figures/paradigmSmall-01.png"  style="width:100%"> --> 
+</figurecolumn>
+        
+</form>
+</body>
+</html>

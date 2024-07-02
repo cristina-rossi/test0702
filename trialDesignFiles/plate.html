@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+    <title>Plate Object</title>
+</head>
+<body>
+    <form class="tabcontent"> 
+        
+        
+        
+  		<!-- Plate -->
+    		  <inputdivider> Plate </inputdivider>
+        
+        <inputcolumn>
+  
+  
+		  <div class="form-control">        
+			<name>Plate size [meters]:</name>
+   			<inputs>
+   			<label for="PLATE_SCALE_X">X:</label>
+			<input id="PLATE_SCALE_X" name="setupScript,plateSizeX" type="number" value="0.25" />
+			<label for="PLATE_SCALE_Y">Y:</label>
+			<input id="PLATE_SCALE_Y" name="setupScript,plateSizeY" type="number" value="0.02" />
+			<label for="PLATE_SCALE_Z">Z:</label>
+			<input id="PLATE_SCALE_Z" name="setupScript,plateSizeZ" type="number" value="0.25" />
+   			</inputs>         
+			<name>Plate physics:</name>
+   			<inputs>
+   			<label for="PLATE_MASS">Mass [kg]:</label>
+			<input id="PLATE_MASS" name="setupScript,plateMass" type="number" value="1" />
+			<label for="PLATE_DRAG">Y:</label>
+			<input id="PLATE_DRAG" name="setupScript,plateDrag" type="number" value="0" />
+			<label for="PLATE_ADRAG">Angular drag:</label>
+			<input id="PLATE_ADRAG" name="setupScript,plateAngularDrag" type="number" value="0.05" />
+   			</inputs>             
+			<name>Plate-hands friction:</name>
+   			<inputs>
+   			<label for="PLATE_FRICTIOND">Dynamic coefficient:</label>
+			<input id="PLATE_FRICTIOND" name="setupScript,frictionPlateHandsDynamic" type="number" value="0.6" />
+			<label for="PLATE_FRICTIONS">Static coefficient:</label>
+			<input id="PLATE_FRICTIONS" name="setupScript,frictionPlateHandsStatic" type="number" value="0.6" />
+   			</inputs>              
+		
+		   </div>
+
+        </inputcolumn><inputcolumn>
+     	<!-- Grape -->
+    		  <inputdivider> Grape </inputdivider>
+		  <div class="form-control">     
+			<name>Grape local position wrt plate center [meters]:</name>
+   			<inputs>
+   			<label for="GRAPE_OFFSET_X">X:</label>
+			<input id="GRAPE_OFFSET_X" name="setupScript,grapeLocalPositionX" type="number" value="0" />
+			<label for="GRAPE_OFFSET_Y">Y:</label>
+			<input id="GRAPE_OFFSET_Y" name="setupScript,grapeLocalPositionY" type="number" value="0.05" />
+			<label for="GRAPE_OFFSET_Z">Z:</label>
+			<input id="GRAPE_OFFSET_Z" name="setupScript,grapeLocalPositionZ" type="number" value="0" />
+              	    
+			<input id="GRAPE_OFFSETYAUTO_H" name="setupScript,grapeLocalPositionY_Auto" type="hidden" value="FALSE">
+			<input id="GRAPE_OFFSETYAUTO" name="setupScript,grapeLocalPositionY_Auto" type="checkbox" value="TRUE" checked >
+			<label for="GRAPE_OFFSETYAUTO">Set Y automatically (grape rests on plate)</label>	
+   		     			
+   			</inputs>         
+			<name>Grape scale [relative]:</name>
+   			<inputs>
+   			<label for="GRAPE_SCALE_X">X:</label>
+			<input id="GRAPE_SCALE_X" name="setupScript,grapeSizeX" type="number" value="0.1" />
+			<label for="GRAPE_SCALE_Y">Y:</label>
+			<input id="GRAPE_SCALE_Y" name="setupScript,grapeSizeY" type="number" value="0.08" />
+			<label for="GRAPE_SCALE_Z">Z:</label>
+			<input id="GRAPE_SCALE_Z" name="setupScript,grapeSizeZ" type="number" value="0.08" />
+   			</inputs>         
+			<name>Grape physics:</name>
+   			<inputs>
+   			<label for="GRAPE_MASS">Mass [kg]:</label>
+			<input id="GRAPE_MASS" name="setupScript,grapeMass" type="number" value="1" />
+			<label for="GRAPE_DRAG">Y:</label>
+			<input id="GRAPE_DRAG" name="setupScript,grapeDrag" type="number" value="0" />
+			<label for="GRAPE_ADRAG">Angular drag:</label>
+			<input id="GRAPE_ADRAG" name="setupScript,grapeAngularDrag" type="number" value="0.05" />
+   			</inputs>             
+			<name>Grape-plate friction:</name>
+   			<inputs>
+   			<label for="GRAPE_FRICTIOND">Dynamic coefficient:</label>
+			<input id="GRAPE_FRICTIOND" name="setupScript,frictionPlateGrapeDynamic" type="number" value="0.3" />
+			<label for="GRAPE_FRICTIONS">Static coefficient:</label>
+			<input id="GRAPE_FRICTIONS" name="setupScript,frictionPlateGrapeStatic" type="number" value="0.3" />
+   			</inputs>          
+			<name>Ignore grape-hand collision:</name>
+   			<inputs>		    
+			<input id="GRAPE_HANDS_IGNORE_H" name="grapeScript,grapeAlwaysIgnoreHands" type="hidden" value="FALSE">
+			<input id="GRAPE_HANDS_IGNORE" name="grapeScript,grapeAlwaysIgnoreHands" type="checkbox" value="TRUE" >
+			<label for="GRAPE_HANDS_IGNORE"></label>	
+   			</inputs>    			
+		   </div>
+
+        </inputcolumn><inputcolumn>
+        
+  		<!-- Plate stand -->
+    		  <inputdivider> Plate stand   </inputdivider>
+		  <div class="form-control">        
+			<name>Plate stand size [meters]:</name>
+   			<inputs>
+   			<label for="PLATESTAND_SCALE_X">X:</label>
+			<input id="PLATESTAND_SCALE_X" name="setupScript,plateStandSizeX" type="number" value="0.1" />
+			<label for="PLATESTAND_SCALE_Z">Z:</label>
+			<input id="PLATESTAND_SCALE_Z" name="setupScript,plateStandSizeZ" type="number" value="0.1" />
+   			</inputs>   
+<note>Y Size is set automatically based on initial plate position</note>
+ <name>Plate stand color </name>
+   			<inputs>
+   			<label for="PLATESTAND_COLOR_B_R">R:</label>
+			<input id="PLATESTAND_COLOR_B_R" name="setupScript,plateStandColorR" type="number" value="0.4" />
+   			<label for="PLATESTAND_COLOR_B_G">G:</label>
+			<input id="PLATESTAND_COLOR_B_G" name="setupScript,plateStandColorG" type="number" value="0.2" />
+   			<label for="PLATESTAND_COLOR_B_B">B:</label>
+			<input id="PLATESTAND_COLOR_B_B" name="setupScript,plateStandColorB" type="number" value="0" />
+   			<label for="PLATESTAND_COLOR_B_A">Alpha:</label>
+			<input id="PLATESTAND_COLOR_B_A" name="setupScript,plateStandColorAlpha" type="number" value="0.5" />
+   			</inputs>   
+
+</div>
+        </inputcolumn>
+        
+        
+        
+        
+        
+        
+    	
+  		<!-- PLATE "HOME" = position in "plate contact" phase -->
+    		  <inputdivider> Plate home position</inputdivider>
+		  <inputcolumn>
+     		    <!-- plate position (wrt headset eye level) -->      
+		    <div class="form-control">  
+<name>   </name>	 
+<inputs>  </inputs>      
+<name>   </name>	 
+<inputs>  </inputs> 
+<name>   </name>	 
+<inputs>  </inputs>  
+			<name>Position of plate at trial start [meters]</name>
+   			<inputs>
+   			<label for="PLATE_X">X:</label>
+			<input id="PLATE_X" name="setupScript,platePositionX" type="number" value="0" />
+			<label for="PLATE_Y">Y:</label>
+			<input id="PLATE_Y" name="setupScript,platePositionY" type="number" value="-0.3" />
+			<label for="PLATE_Z">Z:</label>
+			<input id="PLATE_Z" name="setupScript,platePositionZ" type="number" value="0.5" />
+   			</inputs>
+            <note>(relative to headset center eye)</note> 
+
+</div></inputcolumn>
+
+	
+		   <figurecolumn>
+			<img src="trialDesignFiles/figures/plateHomePosition.png"  style="width:100%">
+		   </figurecolumn>
+        
+        
+    		  <inputdivider> Colors </inputdivider>
+          <inputcolumn>
+
+    		<!-- colors -->
+              	   <div>
+              	<name>Particle effect success color:</name>
+   			<inputs>
+   			<label for="EFFECT_COLOR_S_R">R:</label>
+			<input id="EFFECT_COLOR_S_R" name="plateAndGrapeScript,plateGrapeColorSuccessR" type="number" value="0" />
+   			<label for="EFFECT_COLOR_S_G">G:</label>
+			<input id="EFFECT_COLOR_S_G" name="plateAndGrapeScript,plateGrapeColorSuccessG" type="number" value="0.75" />
+   			<label for="EFFECT_COLOR_S_B">B:</label>
+			<input id="EFFECT_COLOR_S_B" name="plateAndGrapeScript,plateGrapeColorSuccessB" type="number" value="0.4" />
+   			<label for="EFFECT_COLOR_S_A">Alpha:</label>
+			<input id="EFFECT_COLOR_S_A" name="plateAndGrapeScript,plateGrapeColorSuccessAlpha" type="number" value="0.5" />
+   			</inputs>            
+			<name>Particle effect failure color:</name>
+   			<inputs>
+   			<label for="EFFECT_COLOR_U_R">R:</label>
+			<input id="EFFECT_COLOR_U_R" name="plateAndGrapeScript,plateGrapeColorUnsuccessR" type="number" value="1" />
+   			<label for="EFFECT_COLOR_U_G">G:</label>
+			<input id="EFFECT_COLOR_U_G" name="plateAndGrapeScript,plateGrapeColorUnsuccessG" type="number" value="0" />
+   			<label for="EFFECT_COLOR_U_B">B:</label>
+			<input id="EFFECT_COLOR_U_B" name="plateAndGrapeScript,plateGrapeColorUnsuccessB" type="number" value="0" />
+   			<label for="EFFECT_COLOR_U_A">Alpha:</label>
+			<input id="EFFECT_COLOR_U_A" name="plateAndGrapeScript,plateGrapeColorUnsuccessAlpha" type="number" value="0.5" />
+   			</inputs>    
+   		        <note>Particle effect appears on plate upon trial change</note>    
+		   </div>
+
+
+              </inputcolumn>
+
+	<figurecolumn>
+    		<img src="trialDesignFiles/figures/feedback.png"  style="width:100%">
+	</figurecolumn>
+        
+   </form> 
+        
+    
+</body>
+</html>

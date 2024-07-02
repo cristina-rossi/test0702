@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Animation </title>
+</head>
+<body>
+<form class="tabcontent">      
+<div class="form-control">         
+<inputcolumn>
+        
+<!-- Content: --> 
+
+
+
+    <name>Entry animation:</name>
+        <inputs>	
+        <input id="TGTBIRD_ANIM_ENTRY_A" name="trialScript,targetBirdEntryAnimation" type="radio" value="appear">
+        <label for="TGTBIRD_ANIM_ENTRY_A">Appear</label> 
+        <input id="TGTBIRD_ANIM_ENTRY_L" name="trialScript,targetBirdEntryAnimation" type="radio" value="landing" checked>
+        <label for="TGTBIRD_ANIM_ENTRY_L">Fly in</label> 
+        <br>        
+        <label for="TGTBIRD_APPOFFSET_X">"Fly in" distance [meters], X:</label>
+        <input id="TGTBIRD_APPOFFSET_X" name="trialScript,targetBirdAppearanceOffsetX" type="number" value="0" />
+        <label for="TGTBIRD_APPOFFSET_Y">Y:</label>
+        <input id="TGTBIRD_APPOFFSET_Y" name="trialScript,targetBirdAppearanceOffsetY" type="number" value="0.5" />
+        <label for="TGTBIRD_APPOFFSET_Z">Z:</label>
+        <input id="TGTBIRD_APPOFFSET_Z" name="trialScript,targetBirdAppearanceOffsetZ" type="number" value="1" />
+        <note>For "Fly in" option, bird appears at a distant position and then flies towards its ultimate position on target  </note>
+        <note>Define the "distant appearance position" relative to the ultimate bird position on target</note>
+        </inputs><br><br>
+
+    <name>Exit animation:</name>
+        <inputs>
+        <input id="TGTBIRD_ANIM_EXIT_D" name="trialScript,targetBirdExitAnimation" type="radio" value="disappear" >
+        <label for="TGTBIRD_ANIM_EXIT_D">Disappear</label> 
+        <input id="TGTBIRD_ANIM_EXIT_T" name="trialScript,targetBirdExitAnimation" type="radio" value="takeoff" checked>
+        <label for="TGTBIRD_ANIM_EXIT_T">Fly away</label> 
+        <br>
+        <label for="TGTBIRD_DISAPPOFFSET_X">"Fly away" distance [meters], X:</label>
+        <input id="TGTBIRD_DISAPPOFFSET_X" name="trialScript,targetBirdDepartureOffsetX" type="number" value="0" />
+        <label for="TGTBIRD_DISAPPOFFSET_Y">Y:</label>
+        <input id="TGTBIRD_DISAPPOFFSET_Y" name="trialScript,targetBirdDepartureOffsetY" type="number" value="0.5" />
+        <label for="TGTBIRD_DISAPPOFFSET_Z">Z:</label>
+        <input id="TGTBIRD_DISAPPOFFSET_Z" name="trialScript,targetBirdDepartureOffsetZ" type="number" value="-1" />
+        <note>For "Fly away" option, bird flies towards distant position and then disappears</note>
+        <note>Define the "distant disappearance position" relative to the bird position on target</note>
+        </inputs><br><br>
+
+    
+    <name>Animation while on target:</name> 
+        <inputs>	 
+        <input id="TGTBIRD_ANIM_MAIN_" name="trialScript,targetBirdMainAnimation" type="radio" value="flying" >
+        <label for="TGTBIRD_ANIM_MAIN_">Flying</label> 
+        <input id="TGTBIRD_ANIM_MAIN_" name="trialScript,targetBirdMainAnimation" type="radio" value="ground" checked>
+        <label for="TGTBIRD_ANIM_MAIN_">Perched</label> 
+        <br>
+        <label for="TGTBIRD_ANIM_T0">"Perched" animation changes every </label>
+        <input id="TGTBIRD_ANIM_T0" name="trialScript,targetBirdGroundAnimationMinDuration" type="number" value="2" />
+        <label for="TGTBIRD_ANIM_TE"> to </label>
+        <input id="TGTBIRD_ANIM_TE" name="trialScript,targetBirdGroundAnimationMaxDuration" type="number" value="5" />
+        <label>[Seconds]</label>
+        <note>For "Perched" option, bird animation randomly changes between preening, pecking, ruffling, or looking around</note>
+        <note>(the animation changes after a time interval selected at random from the range specified above)</note>
+        </inputs><br>
+
+
+    
+ 
+<!-- End of Content --> 
+ 
+</inputcolumn> 
+</div>  
+<figurecolumn>
+ <!-- <img src="trialDesignFiles/figures/paradigmSmall-01.png"  style="width:100%"> --> 
+</figurecolumn>
+        
+</form>
+</body>
+</html>

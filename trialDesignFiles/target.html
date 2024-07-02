@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target Object</title>
+</head>
+<body>
+<form class="tabcontent"> 
+        
+        
+        
+        
+
+        <!-- TARGET-->
+    		  <inputdivider> Target </inputdivider>	
+		  <inputcolumn>
+		    <div class="form-control">      
+            <note>For a success, plate must reach "target position":</note> 
+      
+			<name>Target position [meters]</name>
+   			<inputs>
+			<label for="TARGET_X">X:</label>
+			<input id="TARGET_X" name="setupScript,targetLocalPositionX" type="number" value="0" />
+			<label for="TARGET_Y">Y:</label>
+			<input id="TARGET_Y" name="setupScript,targetLocalPositionY" type="number" value="0.3" />
+			<label for="TARGET_Z">Z:</label>
+			<input id="TARGET_Z" name="setupScript,targetLocalPositionZ" type="number" value="0" />
+   			</inputs>
+            <note>(relative to plate starting position)</note> 
+		     
+      
+     		    <!-- target collider size  -->		
+   		    <note></note>     
+   		    <note>Specifically, the distance between plate center and target position must be less than "target size":</note> 
+			<name>Target size [meters]</name>
+   			<inputs> 
+			<label for="TARGETSIZE_X">X:</label>
+			<input id="TARGETSIZE_X" name="setupScript,targetSizeX" type="number" value="0.1" />
+			<label for="TARGETSIZE_Y">Y:</label>
+			<input id="TARGETSIZE_Y" name="setupScript,targetSizeY" type="number" value="0.1" />
+			<label for="TARGETSIZE_Z">Z:</label>
+			<input id="TARGETSIZE_Z" name="setupScript,targetSizeZ" type="number" value="0.1" />   
+   			</inputs>
+		    
+      
+     		    <!-- max plate tilt for success -->       	
+   		    <note></note>     
+   		    <note>The plate tilt/rotation must also be less than:</note> 
+			<name>Max plate tilt at target [deg]</name>
+   			<inputs> 
+			<label for="MAXTILT_X">X (front-back):</label>
+			<input id="MAXTILT_X" name="targetScript,maxTiltForSuccessX" type="number" value="180" />
+			<label for="MAXTILT_Y">Y (flat rotation):</label>
+			<input id="MAXTILT_Y" name="targetScript,maxTiltForSuccessY" type="number" value="180" />
+			<label for="MAXTILT_Z">Z (left-right):</label>
+			<input id="MAXTILT_Z" name="targetScript,maxTiltForSuccessZ" type="number" value="30" />
+   			</inputs> 
+      	
+   		    <note></note>     
+   		    <note>For a success, these conditions must remain true for:</note> 	
+			<name>Time in target for success [seconds]</name>
+			<inputs>
+			<label for="TIME_IN_TARGET"></label>
+			<input id="TIME_IN_TARGET" name="targetScript,timeInTargetForSuccess" type="number" value="0.1" />
+			</inputs>
+
+	
+   		    <note></note>     
+            <note>Trial fails after contact with target if the above conditions are not met</note> 
+      		<note>    (<-- plate too tilted / exits target region before "time in target for success") </note> 
+      		 	
+   		    <note></note>     	
+   		    <note></note>     
+            <note>Additional failure criteria can be specified below: </note> 
+      		
+
+			<name>Workspace radius [meters]</name>
+			<inputs>
+			<label for="WORKSPACE_RADIUS"></label>
+			<input id="WORKSPACE_RADIUS" name="setupScript,taskWorkspaceBoundSizeRadius" type="number" value="0.3" />
+			</inputs>
+            <note>(relative to plate starting position; trial fails if plate exits the workspace at any point)</note> 
+		    </div>
+
+ 
+        </inputcolumn>   
+  
+		   <figurecolumn>
+			<img src="trialDesignFiles/figures/targetPositionCriteria.png"  style="width:100%">
+		   </figurecolumn>
+      <!-- Expandable Workspace -->
+ 
+       <button class="expand-button"  type="button" onclick="toggleExpandableWindow(this,'expandableWorkspace')">
+        &nbsp;Expand failure criteria -> workspace
+        </button>
+ 
+        <inputcolumn>
+        <div class="expwindow" id="expandableWorkspace">	 
+            <name>Workspace shape</name>
+			<inputs>
+			<input id="WORKSPACE_SHAPE_SPHERE" name="setupScript,taskWorkspaceBoundShape" type="radio" value="Sphere"  checked>
+			<label for="WORKSPACE_SHAPE_SPHERE">Sphere</label> 
+			<input id="WORKSPACE_SHAPE_CUBE" name="setupScript,taskWorkspaceBoundShape" type="radio" value="Cube">
+			<label for="WORKSPACE_SHAPE_CUBE">Cube</label>  
+   			</inputs>
+
+            <note>If "cube" selected, specify size below: </note> 
+			<name>Workspace cube size[meters]</name>
+   			<inputs> 
+			<label for="WORKSPACE_SIZEX">X:</label>
+			<input id="WORKSPACE_SIZEX" name="setupScript,taskWorkspaceBoundSizeX" type="number" value="0.3" />
+			<label for="WORKSPACE_SIZEY">Y:</label>
+			<input id="WORKSPACE_SIZEY" name="setupScript,taskWorkspaceBoundSizeY" type="number" value="0.3" />
+			<label for="WORKSPACE_SIZEZ">Z:</label>
+			<input id="WORKSPACE_SIZEZ" name="setupScript,taskWorkspaceBoundSizeZ" type="number" value="0.3" />   
+   			</inputs>
+
+      </div>  <!-- expand/collapse the window -->
+     </inputcolumn>
+
+ <!-- Expandable gamearea -->
+ 
+       <button class="expand-button"  type="button" onclick="toggleExpandableWindow(this,'expandableGamearea')">
+        &nbsp;Expand failure criteria -> falls
+        </button>
+ 
+        <inputcolumn>
+        <div class="expwindow" id="expandableGamearea">	 
+			<name>Game boundary position [meters]</name>
+   			<inputs> 
+			<label for="GAMEAREA_L">Left:</label>
+			<input id="GAMEAREA_L" name="setupScript,gameBoundLocalPositionLeft" type="number" value="0.5" />
+			<label for="GAMEAREA_R">Right:</label>
+			<input id="GAMEAREA_R" name="setupScript,gameBoundLocalPositionRight" type="number" value="0.5" />
+   			</inputs>
+
+			<name> </name>
+   			<inputs> 
+			<label for="GAMEAREA_F">Front:</label>
+			<input id="GAMEAREA_F" name="setupScript,gameBoundLocalPositionFront" type="number" value="0.5" />
+			<label for="GAMEAREA_B">Back:</label>
+			<input id="GAMEAREA_B" name="setupScript,gameBoundLocalPositionBack" type="number" value="0.5" />
+   			</inputs>
+
+			<name> </name>
+   			<inputs> 
+			<label for="GAMEAREA_U">Top:</label>
+			<input id="GAMEAREA_U" name="setupScript,gameBoundLocalPositionTop" type="number" value="0.8" />
+			<label for="GAMEAREA_D">Bottom:</label>
+			<input id="GAMEAREA_D" name="setupScript,gameBoundLocalPositionBottom" type="number" value="1" />
+
+			<input id="GAMEAREA_GH" name="setupScript,gameBoundBottomIsGround" type="hidden" value="FALSE">
+			<input id="GAMEAREA_G" name="setupScript,gameBoundBottomIsGround" type="checkbox" value="TRUE" checked>	
+			<label for="GAMEAREA_G">Match bottom to ground </label>	 
+   			</inputs>
+        <note>Relative to plate starting position </note>
+
+      </div>  <!-- expand/collapse the window -->
+     </inputcolumn>
+
+
+ <!-- Expandable time limits -->
+ 
+       <button class="expand-button"  type="button" onclick="toggleExpandableWindow(this,'expandableTimelimits')">
+        &nbsp;Expand failure criteria -> time limits
+        </button>
+ 
+        <inputcolumn>
+        <div class="expwindow" id="expandableTimelimits">	 
+			<name>Time limit whole trial [seconds]</name>
+   			<inputs> 
+			<label for="MAXTIME_T"></label>
+			<input id="MAXTIME_T" name="trialScript,trial_maxTime" type="number" value="60" />
+   			</inputs>
+
+			<name>Time limit by stage [seconds]</name>
+   			<inputs> 
+			<label for="MAXTIME_2">Return home: </label>
+			<input id="MAXTIME_2" name="trialScript,stage2_maxTime" type="number" value="60" />
+			<label for="MAXTIME_3">Contact plate: </label>
+			<input id="MAXTIME_3" name="trialScript,stage3_maxTime" type="number" value="60" />
+			<label for="MAXTIME_4">Reach target: </label>
+			<input id="MAXTIME_4" name="trialScript,stage4_maxTime" type="number" value="60" />
+   			</inputs>
+        <note>Going over time limit will trigger a failed trial. </note>
+
+      </div>  <!-- expand/collapse the window -->
+     </inputcolumn>
+
+    		  <inputdivider> Colors </inputdivider>
+  <inputcolumn>
+
+    		<!-- colors -->
+		  <div class="form-control">        
+			<name>Target mesh success color:</name>
+   			<inputs>
+   			<label for="TARGET_COLOR_S_R">R:</label>
+			<input id="TARGET_COLOR_S_R" name="targetScript,targetMeshColorSuccessR" type="number" value="0" />
+   			<label for="TARGET_COLOR_S_G">G:</label>
+			<input id="TARGET_COLOR_S_G" name="targetScript,targetMeshColorSuccessG" type="number" value="0.75" />
+   			<label for="TARGET_COLOR_S_B">B:</label>
+			<input id="TARGET_COLOR_S_B" name="targetScript,targetMeshColorSuccessB" type="number" value="0.4" />
+   			<label for="TARGET_COLOR_S_A">Alpha:</label>
+			<input id="TARGET_COLOR_S_A" name="targetScript,targetMeshColorSuccessAlpha" type="number" value="0.5" />
+   			</inputs>            
+			<name>Target mesh failure color:</name>
+   			<inputs>
+   			<label for="TARGET_COLOR_U_R">R:</label>
+			<input id="TARGET_COLOR_U_R" name="targetScript,targetMeshColorUnsuccessR" type="number" value="1" />
+   			<label for="TARGET_COLOR_U_G">G:</label>
+			<input id="TARGET_COLOR_U_G" name="targetScript,targetMeshColorUnsuccessG" type="number" value="0" />
+   			<label for="TARGET_COLOR_U_B">B:</label>
+			<input id="TARGET_COLOR_U_B" name="targetScript,targetMeshColorUnsuccessB" type="number" value="0" />
+   			<label for="TARGET_COLOR_U_A">Alpha:</label>
+			<input id="TARGET_COLOR_U_A" name="targetScript,targetMeshColorUnsuccessAlpha" type="number" value="0.5" />
+   			</inputs>    
+   		    <note>Target color changes online based on success criteria</note>   
+        </div>
+ 
+  </inputcolumn>
+
+	<figurecolumn>
+    		<img src="trialDesignFiles/figures/feedback.png"  style="width:100%">
+	</figurecolumn>
+              
+              
+              
+     
+     	<!-- Target mesh -->
+    		  <inputdivider> Target Visual Mesh </inputdivider>
+  <inputcolumn>
+		  <div class="form-control">     
+			<name>Mesh position offset wrt target center [meters]:</name>
+   			<inputs>
+   			<label for="TARGETMESH_OFFSET_X">X:</label>
+			<input id="TARGETMESH_OFFSET_X" name="setupScript,targetMeshPositionOffsetX" type="number" value="0" />
+			<label for="TARGETMESH_OFFSET_Y">Y:</label>
+			<input id="TARGETMESH_OFFSET_Y" name="setupScript,targetMeshPositionOffsetY" type="number" value="0" />
+			<label for="TARGETMESH_OFFSET_Z">Z:</label>
+			<input id="TARGETMESH_OFFSET_Z" name="setupScript,targetMeshPositionOffsetZ" type="number" value="0" />
+   			</inputs>   
+   		  	<note>Offset of the visual mesh wrt to actual target position (that set in Task tab)</note>  
+<br><br><br>
+
+<name style="vertical-align: top;">Mesh size:</name>
+            <inputs>	<span style='font-size:15px;'>&#8594;</span> 		    
+			<label> &nbsp;Automatic - match to:</label> 
+            <br>
+                <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input id="TARGETMESH_SIZE_AUTO_PT" name="setupScript,targetMeshSizeAuto" type="radio" value="platePlusTarget" checked >
+			<label for="TARGETMESH_SIZE_AUTO_PT">Target size: entire plate must lay within mesh for success</label> 
+            <br>
+                <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input id="TARGETMESH_SIZE_AUTO_CT" name="setupScript,targetMeshSizeAuto" type="radio" value="centerTarget" >
+			<label for="TARGETMESH_SIZE_AUTO_CT">Target size: plate center must lay within mesh for success</label> 
+            <br>
+                <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input id="TARGETMESH_SIZE_AUTO_P" name="setupScript,targetMeshSizeAuto" type="radio" value="plate"  >
+			<label for="TARGETMESH_SIZE_AUTO_P">Plate size: mesh shows ideal plate position, at target center</label> 
+            <br>
+            <span style='font-size:15px;'>&#8594;</span> 	
+			<input style='margin-left: 0px;' id="TARGETMESH_SIZE_AUTO_N" name="setupScript,targetMeshSizeAuto" type="radio" value="none">
+			<label for="TARGETMESH_SIZE_AUTO_N">Manual [meters]: </label> 
+
+			 
+   			 
+   			<label for="TARGETMESH_SIZE_X">X:</label>
+			<input id="TARGETMESH_SIZE_X" name="setupScript,targetMeshSizeX" type="number" value="0.2" />
+			<label for="TARGETMESH_SIZE_Y">Y:</label>
+			<input id="TARGETMESH_SIZE_Y" name="setupScript,targetMeshSizeY" type="number" value="0.005" />
+			<label for="TARGETMESH_SIZE_Z">Z:</label>
+			<input id="TARGETMESH_SIZE_Z" name="setupScript,targetMeshSizeZ" type="number" value="0.2" />
+   			</inputs> 
+
+<br><br><br><br> 
+<name>Mesh shape:</name>
+            <inputs>		    
+			<input id="TARGETMESH_SHAPE_CU" name="setupScript,targetMeshShape" type="radio" value="Cube" checked>
+			<label for="TARGETMESH_SHAPE_CU">Cube</label> 
+			<input id="TARGETMESH_SHAPE_CY" name="setupScript,targetMeshShape" type="radio" value="Cylinder">
+			<label for="TARGETMESH_SHAPE_CY">Cylinder</label> 
+            <input id="TARGETMESH_SHAPE_CA" name="setupScript,targetMeshShape" type="radio" value="Capsule"  >
+			<label for="TARGETMESH_SHAPE_CA" >Capsule</label> 
+			<input id="TARGETMESH_SHAPE_SP" name="setupScript,targetMeshShape" type="radio" value="Sphere">
+			<label for="TARGETMESH_SHAPE_SP">Sphere</label> 
+<br>
+			<input id="TARGETMESH_SHAPE_PL" name="setupScript,targetMeshShape" type="radio" value="Plate">
+			<label for="TARGETMESH_SHAPE_PL">Plate</label> 
+			<input id="TARGETMESH_SHAPE_PG" name="setupScript,targetMeshShape" type="radio" value="PlateAndGrape">
+			<label for="TARGETMESH_SHAPE_PG">Plate+Grape</label> 
+</inputs> 
+		   </div>
+              
+              
+  </inputcolumn>
+
+        
+</form>
+</body>
+</html>

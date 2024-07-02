@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Time Limits  </title>
+</head>
+<body>
+<form class="tabcontent">      
+<div class="form-control">         
+<inputcolumn>
+        
+<!-- Content: --> 
+ 
+<name>Time limit whole trial [seconds]</name>
+    <inputs> 
+    <label for="MAXTIME_T"></label>
+    <input id="MAXTIME_T" name="trialScript,trial_maxTime" type="number" value="60" />
+    </inputs>
+    <note>(Trial fails after this amount of time from the start of the trial)</note> 
+    <br><br>
+    
+  
+
+<name>Time limit by stage [seconds]</name>
+    <inputs> 
+    <label for="MAXTIME_2">Hand homes: </label>
+    <input id="MAXTIME_2" name="trialScript,stage2_maxTime" type="number" value="60" />
+    <label for="MAXTIME_3">Plate contact: </label>
+    <input id="MAXTIME_3" name="trialScript,stage3_maxTime" type="number" value="60" />
+    <label for="MAXTIME_4">Plate lift: </label>
+    <input id="MAXTIME_4" name="trialScript,stage4_maxTime" type="number" value="60" />
+    </inputs>
+    
+    <note>Going over time limit will trigger a failed trial. </note>
+
+
+
+<!-- End of Content --> 
+ 
+</inputcolumn> 
+</div>  
+<figurecolumn>
+ <!-- <img src="trialDesignFiles/figures/paradigmSmall-01.png"  style="width:100%"> --> 
+</figurecolumn>
+        
+</form>
+</body>
+</html>

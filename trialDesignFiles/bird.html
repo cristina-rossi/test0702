@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bird</title>
+</head>
+<body>
+<form class="tabcontent"> 
+        
+         
+
+     
+  		<!-- bird sound -->
+    		  <inputdivider> Bird sound </inputdivider>
+    	<inputcolumn>
+ 
+		  <div class="form-control">        
+			<name>Volume [0 to 1]:</name>
+   			<inputs>      
+			<label for="BIRDVOL"></label>
+			<input id="BIRDVOL" name="setupScript,targetBirdVolume" type="number" value="1" />
+   			</inputs>      
+   		        <note>Change sounds by replacing failure and success mp3 files in Resources</note>    
+
+
+ 
+	<name>Change bird:</name> 
+	<inputs>
+		<input id="CHANGEBIRD_ANY" name="trialScript,changeBirdAnyCondition" type="radio" value="TRUE"  checked >
+		<label for="CHANGEBIRD_ANY">After every trial</label> 
+		<input id="CHANGEBIRD_ANYF" name="trialScript,changeBirdAnyCondition" type="radio" value="FALSE" >
+		<label for="CHANGEBIRD_ANYF">For selected conditions (expand below) </label>  
+   	</inputs>
+
+ 
+
+<!-- Expandable Change Bird Condition -->
+ 
+       <button class="expand-button"  type="button" onclick="toggleExpandableWindow(this,'expandableChangeBird')">
+        Expand conditions for changing bird
+        </button>
+ 
+        <inputcolumn>
+        <div class="expwindow" id="expandableChangeBird"> 
+ 
+ <name>Change bird for conditions:</name> <inputs></inputs>  
+ 
+ <name> </name> <inputs> 
+ <input id="OMH" name="trialScript,changeBirdOnSuccess" type="hidden" value="FALSE">
+<input id="OM" name="trialScript,changeBirdOnSuccess" type="checkbox" value="TRUE" checked>	
+<label for="OM">Success</label>	 
+ </inputs>  
+
+ 
+ <name> </name> <inputs> 
+ <input id="OMH" name="trialScript,changeBirdOnFailure1" type="hidden" value="FALSE">
+<input id="OM" name="trialScript,changeBirdOnFailure1" type="checkbox" value="TRUE" checked>	
+<label for="OM">Failure - Plate too tilted</label>	 
+ </inputs>  
+
+
+ <name> </name> <inputs> 
+ <input id="OMH" name="trialScript,changeBirdOnFailure2" type="hidden" value="FALSE">
+<input id="OM" name="trialScript,changeBirdOnFailure2" type="checkbox" value="TRUE" checked>	
+<label for="OM">Failure - Plate exited target</label>	 
+ </inputs>  
+
+
+ <name> </name> <inputs> 
+ <input id="OMH" name="trialScript,changeBirdOnFailure3" type="hidden" value="FALSE">
+<input id="OM" name="trialScript,changeBirdOnFailure3" type="checkbox" value="TRUE" checked>	
+<label for="OM">Failure - Plate fell</label>	 
+ </inputs>  
+	    
+
+
+ <name> </name> <inputs> 
+ <input id="OMH" name="trialScript,changeBirdOnFailure4" type="hidden" value="FALSE">
+<input id="OM" name="trialScript,changeBirdOnFailure4" type="checkbox" value="TRUE" checked>	
+<label for="OM">Failure - Time limit reached</label>	 
+ </inputs>  
+
+
+
+ <name> </name> <inputs> 
+ <input id="OMH" name="trialScript,changeBirdOnFailure5" type="hidden" value="FALSE">
+<input id="OM" name="trialScript,changeBirdOnFailure5" type="checkbox" value="TRUE" checked>	
+<label for="OM">Failure - Workspace exited</label>	 
+ </inputs>  
+ 
+		
+ 	</div>
+  	</inputcolumn>
+
+ 
+
+
+		   </div>
+     
+
+
+	</inputcolumn>  
+
+	<figurecolumn>
+    		<img src="trialDesignFiles/figures/feedback.png"  style="width:100%">
+	</figurecolumn>
+ 
+    
+    
+    
+    
+    
+
+
+
+
+  		<!-- Perch -->
+    		  <inputdivider> Bird perch </inputdivider>
+    
+	<inputcolumn> 
+		  <div class="form-control">      
+
+
+			<name>Position wrt target center [meters]:</name>
+   			<inputs>
+   			<label for="PERCH_OFFSET_X">X:</label>
+			<input id="PERCH_OFFSET_X" name="setupScript,targetPerchPositionOffsetX" type="number" value="0" />
+			<label for="PERCH_OFFSET_Y">Y:</label>
+			<input id="PERCH_OFFSET_Y" name="setupScript,targetPerchPositionOffsetY" type="number" value="0.05" />
+			<label for="PERCH_OFFSET_Z">Z:</label>
+			<input id="PERCH_OFFSET_Z" name="setupScript,targetPerchPositionOffsetZ" type="number" value="-5" />
+            </inputs> 
+<br><br>
+<name>Size [meters]:</name>
+   			<inputs>
+   			<label for="PERCH_SIZE_X">X:</label>
+			<input id="PERCH_SIZE_X" name="setupScript,targetPerchSizeX" type="number" value="0.295" />
+			<label for="PERCH_SIZE_Y">Y:</label>
+			<input id="PERCH_SIZE_Y" name="setupScript,targetPerchSizeY" type="number" value="0.014" />
+			<label for="PERCH_SIZE_Z">Z:</label>
+			<input id="PERCH_SIZE_Z" name="setupScript,targetPerchSizeZ" type="number" value="0.054" />
+            </inputs> 
+
+		 
+</div>
+
+	</inputcolumn> 
+
+	<!--Target bird -->
+    		  <inputdivider> Target bird appearance </inputdivider>
+    
+	<inputcolumn> 
+		  <div class="form-control">  
+
+
+			<name>Position wrt target center [meters]:</name>
+   			<inputs>
+   			<label for="TGTBIRD_OFFSET_X">X:</label>
+			<input id="TGTBIRD_OFFSET_X" name="setupScript,tgtBirdPositionOffsetX" type="number" value="0" />
+			<label for="TGTBIRD_OFFSET_Y">Y:</label>
+			<input id="TGTBIRD_OFFSET_Y" name="setupScript,tgtBirdPositionOffsetY" type="number" value="0" />
+			<label for="TGTBIRD_OFFSET_Z">Z:</label>
+			<input id="TGTBIRD_OFFSET_Z" name="setupScript,tgtBirdPositionOffsetZ" type="number" value="0" />
+                
+              	    
+			<input id="TGTBIRD_OFFSETYAUTO_H" name="setupScript,tgtBirdPositionOffsetYStandOnTargetFlag" type="hidden" value="FALSE">
+			<input id="TGTBIRD_OFFSETYAUTO" name="setupScript,tgtBirdPositionOffsetYStandOnTargetFlag" type="checkbox" value="TRUE" checked >
+			<label for="TGTBIRD_OFFSETYAUTO">Set Y automatically (bird rests on target)</label>	
+            </inputs> 
+<br><br>
+                
+                
+                	<name>Rotation (0 = facing user) [deg]:</name>
+   			<inputs>
+   			<label for="TGTBIRD_ROT_X">X:</label>
+			<input id="TGTBIRD_ROT_X" name="setupScript,tgtBirdRotationX" type="number" value="0" />
+			<label for="TGTBIRD_ROT_Y">Y:</label>
+			<input id="TGTBIRD_ROT_Y" name="setupScript,tgtBirdRotationY" type="number" value="0" />
+			<label for="TGTBIRD_ROT_Z">Z:</label>
+			<input id="TGTBIRD_ROT_Z" name="setupScript,tgtBirdRotationZ" type="number" value="0" />
+            </inputs> 
+<br><br>
+                
+<name>Bird size [meters]:</name>
+   			<inputs>
+
+            <label for="TGTBIRD_CARDINAL_SIZE_X">Cardinal, X:</label>
+			<input id="TGTBIRD_CARDINAL_SIZE_X" name="setupScript,tgtBirdCardinalSizeX" type="number" value="0.4644" />
+			<label for="TGTBIRD_CARDINAL_SIZE_Y">Y:</label>
+			<input id="TGTBIRD_CARDINAL_SIZE_Y" name="setupScript,tgtBirdCardinalSizeY" type="number" value="0.2079" />
+			<label for="TGTBIRD_CARDINAL_SIZE_Z">Z:</label>
+			<input id="TGTBIRD_CARDINAL_SIZE_Z" name="setupScript,tgtBirdCardinalSizeZ" type="number" value="0.2511" />      
+            <br>
+
+            <label for="TGTBIRD_BLUEJAY_SIZE_X">Bluejay, X:</label>
+			<input id="TGTBIRD_BLUEJAY_SIZE_X" name="setupScript,tgtBirdBluejaySizeX" type="number" value="0.4644" />
+			<label for="TGTBIRD_BLUEJAY_SIZE_Y">Y:</label>
+			<input id="TGTBIRD_BLUEJAY_SIZE_Y" name="setupScript,tgtBirdBluejaySizeY" type="number" value="0.2079" />
+			<label for="TGTBIRD_BLUEJAY_SIZE_Z">Z:</label>
+			<input id="TGTBIRD_BLUEJAY_SIZE_Z" name="setupScript,tgtBirdBluejaySizeZ" type="number" value="0.2511" />      
+            <br>
+
+            <label for="TGTBIRD_ROBIN_SIZE_X">Robin, X:</label>
+			<input id="TGTBIRD_ROBIN_SIZE_X" name="setupScript,tgtBirdRobinSizeX" type="number" value="0.4644" />
+			<label for="TGTBIRD_ROBIN_SIZE_Y">Y:</label>
+			<input id="TGTBIRD_ROBIN_SIZE_Y" name="setupScript,tgtBirdRobinSizeY" type="number" value="0.2079" />
+			<label for="TGTBIRD_ROBIN_SIZE_Z">Z:</label>
+			<input id="TGTBIRD_ROBIN_SIZE_Z" name="setupScript,tgtBirdRobinSizeZ" type="number" value="0.2511" />      
+            <br>
+
+            <label for="TGTBIRD_CHICKADEE_SIZE_X">Chickadee, X:</label>
+			<input id="TGTBIRD_CHICKADEE_SIZE_X" name="setupScript,tgtBirdChickadeeSizeX" type="number" value="0.3096" />
+			<label for="TGTBIRD_CHICKADEE_SIZE_Y">Y:</label>
+			<input id="TGTBIRD_CHICKADEE_SIZE_Y" name="setupScript,tgtBirdChickadeeSizeY" type="number" value="0.1386" />
+			<label for="TGTBIRD_CHICKADEE_SIZE_Z">Z:</label>
+			<input id="TGTBIRD_CHICKADEE_SIZE_Z" name="setupScript,tgtBirdChickadeeSizeZ" type="number" value="0.1674" />      
+            <br>
+                
+            <label for="TGTBIRD_GOLDFINCH_SIZE_X">Goldfinch, X:</label>
+			<input id="TGTBIRD_GOLDFINCH_SIZE_X" name="setupScript,tgtBirdGoldfinchSizeX" type="number" value="0.3096" />
+			<label for="TGTBIRD_GOLDFINCH_SIZE_Y">Y:</label>
+			<input id="TGTBIRD_GOLDFINCH_SIZE_Y" name="setupScript,tgtBirdGoldfinchSizeY" type="number" value="0.1386" />
+			<label for="TGTBIRD_GOLDFINCH_SIZE_Z">Z:</label>
+			<input id="TGTBIRD_GOLDFINCH_SIZE_Z" name="setupScript,tgtBirdGoldfinchSizeZ" type="number" value="0.1674" />      
+            <br>
+                
+            <label for="TGTBIRD_SPARROW_SIZE_X">Sparrow, X:</label>
+			<input id="TGTBIRD_SPARROW_SIZE_X" name="setupScript,tgtBirdSparrowSizeX" type="number" value="0.3096" />
+			<label for="TGTBIRD_SPARROW_SIZE_Y">Y:</label>
+			<input id="TGTBIRD_SPARROW_SIZE_Y" name="setupScript,tgtBirdSparrowSizeY" type="number" value="0.1386" />
+			<label for="TGTBIRD_SPARROW_SIZE_Z">Z:</label>
+			<input id="TGTBIRD_SPARROW_SIZE_Z" name="setupScript,tgtBirdSparrowSizeZ" type="number" value="0.1674" />      
+            <br>
+
+            </inputs> 
+<br><br>
+<name>Scale size of all species by factor:</name>
+   			<inputs>
+   			<label for="TGTBIRD_SIZE_X">X:</label>
+			<input id="TGTBIRD_SIZE_X" name="setupScript,tgtBirdsScaleX" type="number" value="1" />
+			<label for="TGTBIRD_SIZE_Y">Y:</label>
+			<input id="TGTBIRD_SIZE_Y" name="setupScript,tgtBirdsScaleY" type="number" value="1" />
+			<label for="TGTBIRD_SIZE_Z">Z:</label>
+			<input id="TGTBIRD_SIZE_Z" name="setupScript,tgtBirdsScaleZ" type="number" value="1" />
+            </inputs> 
+
+ <br><br><br><br><br><br>
+ 
+<name>Bird order of appearance:</name>
+              
+          <inputs>		    
+			<input id="TGTBIRD_SPECIESMODE_R" name="trialScript,targetBirdSpeciesMode" type="radio" value="random" checked>
+			<label for="TGTBIRD_SPECIESMODE_R">Random from all available species</label> 
+            <br>
+                		    
+			<input id="TGTBIRD_SPECIESMODE_RL" name="trialScript,targetBirdSpeciesMode" type="radio" value="listRandom" >
+			<label for="TGTBIRD_SPECIESMODE_RL">Random from specified list of species</label> 
+            <br>
+                		    
+			<input id="TGTBIRD_SPECIESMODE_L" name="trialScript,targetBirdSpeciesMode" type="radio" value="listInOrder" >
+			<label for="TGTBIRD_SPECIESMODE_L">In order from specified list of species</label> 
+            <br>
+                
+            <label for="TGTBIRD_SPECIESLIST">    <span style='font-size:15px;'>&#8594;</span>
+ &nbsp;List of species:</label> <textarea id="TGTBIRD_SPECIESLIST" name="trialScript,targetBirdSpeciesList" rows="1" cols="50">
+bluejay>cardinal>robin>chickadee
+</textarea>
+<note>Write species names separated by ">"</note>		
+<note>Available species: cardinal, bluejay, robin, chickadee, goldfinch, sparrow</note>		
+<br><br>
+    </inputs>   
+<name>Bird change occurs:</name>
+ <inputs>		    
+			<input id="TGTBIRD_CHANGESTAGE_5" name="trialScript,changeBirdStage" type="radio" value="5" checked>
+			<label for="TGTBIRD_CHANGESTAGE_5">After trial completion (after plate reaches the target, falls, etc...)</label> 
+            <br>
+                		    
+			<input id="TGTBIRD_CHANGESTAGE_6" name="trialScript,changeBirdStage" type="radio" value="6" >
+			<label for="TGTBIRD_CHANGESTAGE_6">After feedback message (*after trial completion if no feedback msg)</label> 
+            <br>
+                		    
+			<input id="TGTBIRD_CHANGESTAGE_1" name="trialScript,changeBirdStage" type="radio" value="1" >
+			<label for="TGTBIRD_CHANGESTAGE_1">After the break (*after trial completion / feedback if no break)</label> 
+            <br>
+</inputs>      
+            
+
+
+
+ <br><br><br><br><br><br>
+ 
+<name>Bird animation:</name>
+      <inputs>	
+    <label>    <span style='font-size:15px;'>&#8594;</span>On entry: </label>
+			<input id="TGTBIRD_ANIM_ENTRY_L" name="trialScript,targetBirdEntryAnimation" type="radio" value="landing" checked>
+			<label for="TGTBIRD_ANIM_ENTRY_L">Fly in</label> 
+			<input id="TGTBIRD_ANIM_ENTRY_A" name="trialScript,targetBirdEntryAnimation" type="radio" value="appear">
+			<label for="TGTBIRD_ANIM_ENTRY_A">Appear</label> 
+<br>
+                <note>For "Fly in" option, bird appears at a distant position and then flies towards its ultimate position on target</note>
+      <label for="TGTBIRD_APPOFFSET_X">"Fly in" appearance position wrt position on target [meters], X:</label>
+			<input id="TGTBIRD_APPOFFSET_X" name="trialScript,targetBirdAppearanceOffsetX" type="number" value="0" />
+			<label for="TGTBIRD_APPOFFSET_Y">Y:</label>
+			<input id="TGTBIRD_APPOFFSET_Y" name="trialScript,targetBirdAppearanceOffsetY" type="number" value="0.5" />
+			<label for="TGTBIRD_APPOFFSET_Z">Z:</label>
+			<input id="TGTBIRD_APPOFFSET_Z" name="trialScript,targetBirdAppearanceOffsetZ" type="number" value="1" />
+                
+      </inputs>
+
+<name> </name>
+      <inputs>	
+    <label>    <span style='font-size:15px;'>&#8594;</span>On exit: </label>
+			<input id="TGTBIRD_ANIM_EXIT_T" name="trialScript,targetBirdExitAnimation" type="radio" value="takeoff" checked>
+			<label for="TGTBIRD_ANIM_EXIT_T">Fly away</label> 
+			<input id="TGTBIRD_ANIM_EXIT_D" name="trialScript,targetBirdExitAnimation" type="radio" value="disappear" >
+			<label for="TGTBIRD_ANIM_EXIT_D">Disappear</label> 
+<br>
+                <note>For "Fly away" option, bird flies towards distant position and then disappears</note>
+      <label for="TGTBIRD_DISAPPOFFSET_X">"Fly away" disappearance position wrt position on target [meters], X:</label>
+			<input id="TGTBIRD_DISAPPOFFSET_X" name="trialScript,targetBirdDepartureOffsetX" type="number" value="0" />
+			<label for="TGTBIRD_DISAPPOFFSET_Y">Y:</label>
+			<input id="TGTBIRD_DISAPPOFFSET_Y" name="trialScript,targetBirdDepartureOffsetY" type="number" value="0.5" />
+			<label for="TGTBIRD_DISAPPOFFSET_Z">Z:</label>
+			<input id="TGTBIRD_DISAPPOFFSET_Z" name="trialScript,targetBirdDepartureOffsetZ" type="number" value="-1" />
+      </inputs><br>
+
+<name> </name>
+      <inputs>	
+    <label>    <span style='font-size:15px;'>&#8594;</span>While on target: </label>
+			<input id="TGTBIRD_ANIM_MAIN_" name="trialScript,targetBirdMainAnimation" type="radio" value="ground" checked>
+			<label for="TGTBIRD_ANIM_MAIN_">Perched</label> 
+			<input id="TGTBIRD_ANIM_MAIN_" name="trialScript,targetBirdMainAnimation" type="radio" value="flying" >
+			<label for="TGTBIRD_ANIM_MAIN_">Flying</label> 
+<br>
+                <note>For "Perched" option, bird animation randomly changes between preening, pecking, ruffling, or looking around</note>
+
+      <label for="TGTBIRD_ANIM_T0">Perched animations last between </label>
+			<input id="TGTBIRD_ANIM_T0" name="trialScript,targetBirdGroundAnimationMinDuration" type="number" value="2" />
+			<label for="TGTBIRD_ANIM_TE"> to </label>
+			<input id="TGTBIRD_ANIM_TE" name="trialScript,targetBirdGroundAnimationMaxDuration" type="number" value="5" />
+                <label>[Seconds]</label>
+                <note>(the animation changes after a time interval selected at random from the range specified above)</note>
+                
+      </inputs><br>
+    
+    
+              
+</div>
+
+
+
+
+
+	</inputcolumn> 
+
+	<!-- Bird sounds -->
+    		  <inputdivider> Environment birds (not target bird) </inputdivider>
+    
+	<inputcolumn> 
+		  <div class="form-control">     
+			<name>Sound volume [0 to 1]:</name>
+   			<inputs>
+   			<label for="CHIRP_VOL">Chirp:</label>
+			<input id="CHIRP_VOL" name="setupScript,backgroundBirdChirpVolume" type="number" value="0.1" />
+			<label for="WINGS_VOL">Wings:</label>
+			<input id="WINGS_VOL" name="setupScript,backgroundBirdFlyawayVolume" type="number" value="0.1" />
+   			</inputs>    		
+		   </div>
+  	
+	</inputcolumn> 
+	<figurecolumn>
+    		<img src="trialDesignFiles/figures/paradigmSmall-01.png"  style="width:100%">
+	</figurecolumn>
+
+    
+        
+</form>
+</body>
+</html>

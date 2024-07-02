@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.trialContainerParent {
+    display: block; 
+    height: 500px;
+    width: 1300px;
+}
+
+
+

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Navigation</title>
+    <style>
+        /* Style for tabs */
+
+
+        .input-subtab-container {
+            overflow: hidden;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            align-items: flex-end; /* Align children to the bottom */
+        }
+
+        .input-subtab-button {
+            background-color: #f2f2f2;
+            float: left;
+            border: 1px solid #ccc;;
+            outline: none;
+            cursor: pointer;
+            padding: 2px 10px;
+            transition: background-color 0.3s;
+        }
+
+        .input-subtab-button:hover {
+            background-color: #ddd;
+        }
+
+        .input-subtab-button.active {
+            background-color: white;
+            padding: 4px 13px;
+        }
+        
+        
+
+				
+		/* Style the tab content - outside of the user inputs display: none;*/
+		.contentcontainerclass {
+		  display: block;
+		  border: 1px solid #ccc;
+		  border-top: none;
+		  font-family: Arial;
+		  font-size: 15px; /* this is the font size for the non-input text within the form tabs */ 
+		  line-height: 0.75;
+          text-align: left;
+		  width: 100%
+          vertical-align: top;
+	   	  padding: 0px;
+       	  margin: 0px;
+          overflow-y: scroll;
+		}
+        
+        
+    </style>
+</head>
+<body>
+    <!-- Container for navigation tabs -->
+    <div id="input-window-tabcontainer" class="input-subtab-container"></div>
+
+    <!-- Container to display content -->
+    <div id="contentContainer" class="contentcontainerclass"></div>
+
+    <script>
+        // Define tabs and corresponding HTML files
+        const tabsDefinition = {
+            "Tab 1": "trialDesignFiles/bird.html",
+            "Tab 2": "trialDesignFiles/hands.html"
+        };
+        const initialTab = "Tab 2";
+        
+        // Initialize tabs
+        createTabs();
+
+        // Function to create navigation tabs
+        function createTabs() {
+            const tabContainer = document.getElementById('input-window-tabcontainer');
+            for (const tabName in tabsDefinition) {
+                const button = document.createElement('button');
+                button.textContent = tabName;
+                button.className = 'input-subtab-button';
+                button.addEventListener('click', () => clickTab(button,tabsDefinition[tabName]));
+                tabContainer.appendChild(button);
+                
+                if (tabName == initialTab){
+                    clickTab(button,tabsDefinition[tabName]);
+                }
+            }
+            
+        }
+
+        // Function to fetch and display content
+        function clickTab(clickedTab,htmlFile) {
+            fetch(htmlFile)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    document.getElementById('contentContainer').innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+           
+            document.querySelectorAll('.input-subtab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            clickedTab.classList.add('active');
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+
+
+.trialContainer {
+    display: grid;
+    grid-gap: 5px;   
+    height: 100%;
+    width: 100%;
+}
+
+.trialBlockBase {
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer; 
+
+}
+
+
+
+.trialDescriptionBlock{    
+    font-style: italic;  
+    text-align: right;  
+}
+
+.trialGamePhaseBlock {
+    
+}
+
+
+.trialGameObjectBlock {
+    border: 1px solid black;    
+}
+
+
+.trialGameObjectBlock:hover , .trialParadigmEndBlock:hover , .trialParadigmStartBlock:hover { 
+    border: 5px solid black;
+    margin: 1px;
+    font-weight: bold;    
+}
+
+
+.trialParadigmStartBlock , .trialParadigmEndBlock {
+    font-style: italic;    
+    background-color: white;
+    border: 1px dashed lightgray; /* "dotted", "double", "groove", "ridge", "inset", "outset", */  
+}
+
+
+.trialParadigmStartBlock { 
+    text-align: left;
+}
+.trialParadigmEndBlock { 
+    text-align: right;
+}
+

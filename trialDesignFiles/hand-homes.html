@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Home Position</title>
+</head>
+<body>
+<form class="tabcontent"> 
+        
+        
+        
+        
+
+  		<!-- HAND HOME -->
+    		  <inputdivider> Hand home position</inputdivider>
+		  <inputcolumn> 
+		    <div class="form-control">        
+            <!-- Hand Home -->
+<name> </name>	 
+<inputs></inputs> 
+			<name>Return to home position to start trial:</name> 
+
+
+   			<inputs>
+			<input id="HOME_L_H" name="setupScript,lefthandStartingInBoundFlag" type="hidden" value="FALSE">
+			<input id="HOME_L" name="setupScript,lefthandStartingInBoundFlag" type="checkbox" value="TRUE" checked>	
+			<label for="HOME_L">Left hand</label>	
+
+
+ 
+			<input id="HOME_R_H" name="setupScript,righthandStartingInBoundFlag" type="hidden" value="FALSE">
+			<input id="HOME_R" name="setupScript,righthandStartingInBoundFlag" type="checkbox" value="TRUE" checked>	
+			<label for="HOME_R">Right hand</label>	  
+ 
+
+
+	</inputs>      
+ 		
+   			
+<name> </name>	 
+<inputs></inputs>  
+            <name> &nbsp;&nbsp; - - > Left hand home position [meters] </name>		
+
+<inputs>
+   			<label for="LHOME_POS_X">X:</label>
+			<input id="LHOME_POS_X" name="setupScript,lefthandStartingInBoundPositionX" type="number" value="-0.13" />
+			<label for="LHOME_POS_Y">Y:</label>
+			<input id="LHOME_POS_Y" name="setupScript,lefthandStartingInBoundPositionY" type="number" value="-0.1" />
+			<label for="LHOME_POS_Z">Z:</label>
+			<input id="LHOME_POS_Z" name="setupScript,lefthandStartingInBoundPositionZ" type="number" value="0" />
+   			</inputs>  
+        	
+   			
+<name> </name>	 
+<inputs></inputs> 
+            <name> &nbsp;&nbsp; - - > Right hand home position [meters] </name>		
+   			 
+  
+   			<inputs>
+   			<label for="RHOME_POS_X">X:</label>
+			<input id="RHOME_POS_X" name="setupScript,righthandStartingInBoundPositionX" type="number" value="0.13" />
+			<label for="RHOME_POS_Y">Y:</label>
+			<input id="RHOME_POS_Y" name="setupScript,righthandStartingInBoundPositionY" type="number" value="-0.1" />
+			<label for="RHOME_POS_Z">Z:</label>
+			<input id="RHOME_POS_Z" name="setupScript,righthandStartingInBoundPositionZ" type="number" value="0" />
+   			</inputs>  
+
+
+<name> </name>	 
+<inputs></inputs> 
+            <name> &nbsp;&nbsp; - - > Home sphere radius [meters] </name>	
+ 
+   			<inputs>
+   			<label for="LHOME_R">Left home radius:</label>
+			<input id="LHOME_R" name="setupScript,lefthandStartingInBoundSizeRadius" type="number" value="0.1" />
+    
+   			<label for="RHOME_R">Right home radius:</label>
+			<input id="RHOME_R" name="setupScript,righthandStartingInBoundSizeRadius" type="number" value="0.1" />
+   			</inputs>  
+ 
+<name> </name>	 <inputs></inputs>  
+
+  <name> &nbsp;&nbsp; - - > Required time in home [seconds]   </name>		
+   			
+        	  	    
+			<inputs>
+			<input id="THOME" name="trialScript,stage2_handPositionTime" type="number" value="0.1" /> 
+   			<label for="THOME"> </label>
+</inputs>
+
+  <name> </name>	 <inputs></inputs>  
+
+  <name>Safeguard against plate penetration: </name>		
+   			
+       
+   			<inputs>	    	  	    
+			<input id="SHOME_L_H" name="setupScript,lefthandStartingOutBoundFlag" type="hidden" value="FALSE">
+			<input id="SHOME_L" name="setupScript,lefthandStartingOutBoundFlag" type="checkbox" value="TRUE" checked>	
+			<label for="SHOME_L">Left hand bones</label>	
+			<input id="SHOMEE_R_H" name="setupScript,righthandStartingOutBoundFlag" type="hidden" value="FALSE">
+			<input id="SHOME_R" name="setupScript,righthandStartingOutBoundFlag" type="checkbox" value="TRUE" checked>	
+			<label for="SHOME_R">Right hand bones</label>	  
+</inputs>
+
+
+
+ 
+
+
+
+
+
+  <name> </name>	 <inputs></inputs>  
+   		 
+   		  	<note> (home position is relative to plate starting position)</note> 
+   		  	<note> (plate appears & trial starts when selected hands in home position for required time)</note>  
+   		  	<note> </note>  
+
+		    </div>
+		   </inputcolumn> 
+
+		   <figurecolumn>
+			<img src="trialDesignFiles/figures/handHomePosition.png"  style="width:100%">
+		   </figurecolumn>
+
+
+ 
+
+<!-- Expandable Home Shape -->
+ 
+       <button class="expand-button"  type="button" onclick="toggleExpandableWindow(this,'expandableHomeShape')">
+        Expand home position shape
+        </button>
+ 
+        <inputcolumn>
+        <div class="expwindow" id="expandableHomeShape"> 
+<note> </note> 
+
+            <name>Left hand home position shape</name>
+
+ 
+   	 
+
+			<inputs>
+			<input id="LHOME_SHAPE_SPHERE" name="setupScript,lefthandStartingInBoundShape" type="radio" value="Sphere"  checked >
+			<label for="LHOME_SHAPE_SPHERE">Sphere</label> 
+			<input id="LHOME_SHAPE_CUBE" name="setupScript,lefthandStartingInBoundShape" type="radio" value="Cube" >
+			<label for="LHOME_SHAPE_CUBE">Cube</label>  
+   			</inputs>
+
+
+
+
+            <note>If "cube" selected, specify size below: </note> 
+			<name>Left hand home cube size[meters]</name>
+   			<inputs> 
+			<label for="LHOME_SIZEX">X:</label>
+			<input id="LHOME_SIZEX" name="setupScript,lefthandStartingInBoundSizeX" type="number" value="0.1" />
+			<label for="LHOME_SIZEY">Y:</label>
+			<input id="LHOME_SIZEY" name="setupScript,lefthandStartingInBoundSizeY" type="number" value="0.1" />
+			<label for="LHOME_SIZEZ">Z:</label>
+			<input id="LHOME_SIZEZ" name="setupScript,lefthandStartingInBoundSizeZ" type="number" value="0.1" />   
+   			</inputs>
+ 
+            <name>Right hand home position shape</name>
+			<inputs>
+			<input id="RHOME_SHAPE_SPHERE" name="setupScript,righthandStartingInBoundShape" type="radio" value="Sphere"  checked>
+			<label for="RHOME_SHAPE_SPHERE">Sphere</label> 
+			<input id="RHOME_SHAPE_CUBE" name="setupScript,righthandStartingInBoundShape" type="radio" value="Cube">
+			<label for="RHOME_SHAPE_CUBE">Cube</label>  
+   			</inputs>
+
+            <note>If "cube" selected, specify size below: </note> 
+			<name>Right hand home cube size[meters]</name>
+   			<inputs> 
+			<label for="RHOME_SIZEX">X:</label>
+			<input id="RHOME_SIZEX" name="setupScript,righthandStartingInBoundSizeX" type="number" value="0.1" />
+			<label for="RHOME_SIZEY">Y:</label>
+			<input id="RHOME_SIZEY" name="setupScript,righthandStartingInBoundSizeY" type="number" value="0.1" />
+			<label for="RHOME_SIZEZ">Z:</label>
+			<input id="RHOME_SIZEZ" name="setupScript,righthandStartingInBoundSizeZ" type="number" value="0.1" />   
+   			</inputs>
+	 
+
+      </div> 
+     </inputcolumn> <!-- expand/collapse the window -->
+
+
+  <!-- Expandable  expandableHomeSafeguard -->
+ 
+       <button class="expand-button"  type="button" onclick="toggleExpandableWindow(this,'expandableHomeSafeguard')">
+        Expand bone-level safeguard boundary 
+        </button>
+ 
+        <inputcolumn>
+        <div class="expwindow" id="expandableHomeSafeguard">	
+
+
+
+
+<note> </note> 
+   		  	<note>Plate appears & trial starts when all bones in selected hands meet the conditions below:</note>  
+   		  	<note> </note>  
+
+            <name>All left hand bones must be: </name>		
+   			<inputs>
+			<input id="LOFFLIMITS_POS_X" name="setupScript,lefthandStartingOutBoundPositionX" type="number" value="0" />
+   			<label for="LOFFLIMITS_POS_X">meters</label>
+
+			<input id="LOFFLIMITS_XLEFT" name="setupScript,lefthandStartingOutBoundDirectionX" type="radio" value="left" >
+			<label for="LOFFLIMITS_XLEFT">left of</label> 
+			<input id="LOFFLIMITS_XRIGHT" name="setupScript,lefthandStartingOutBoundDirectionX" type="radio" value="right">
+			<label for="LOFFLIMITS_XRIGHT">right of</label>  
+			<input id="LOFFLIMITS_XNONE" name="setupScript,lefthandStartingOutBoundDirectionX" type="radio" value="none"  checked>
+			<label for="LOFFLIMITS_XNONE">none</label> 
+   			</inputs>
+
+
+            <name> </name>	
+   			<inputs>
+			<input id="LOFFLIMITS_POS_Y" name="setupScript,lefthandStartingOutBoundPositionY" type="number" value="0.005" />
+   			<label for="LOFFLIMITS_POS_Y">meters</label>
+
+			<input id="LOFFLIMITS_YLEFT" name="setupScript,lefthandStartingOutBoundDirectionY" type="radio" value="above" >
+			<label for="LOFFLIMITS_YLEFT">above</label> 
+			<input id="LOFFLIMITS_YRIGHT" name="setupScript,lefthandStartingOutBoundDirectionY" type="radio" value="below" checked>
+			<label for="LOFFLIMITS_YRIGHT">below</label>  
+			<input id="LOFFLIMITS_YNONE" name="setupScript,lefthandStartingOutBoundDirectionY" type="radio" value="none"  >
+			<label for="LOFFLIMITS_YNONE">none</label> 
+<label>  &nbsp;  &nbsp;  &nbsp;   <i> (wrt plate start pos.)</i></label>
+   			</inputs>
+
+            <name> </name>	
+
+   			<inputs>
+			<input id="LOFFLIMITS_POS_Z" name="setupScript,lefthandStartingOutBoundPositionZ" type="number" value="0" />
+   			<label for="LOFFLIMITS_POS_Z">meters</label>
+
+			<input id="LOFFLIMITS_ZLEFT" name="setupScript,lefthandStartingOutBoundDirectionZ" type="radio" value="infront" >
+			<label for="LOFFLIMITS_ZLEFT">in front of</label> 
+			<input id="LOFFLIMITS_ZRIGHT" name="setupScript,lefthandStartingOutBoundDirectionZ" type="radio" value="behind">
+			<label for="LOFFLIMITS_ZRIGHT">behind</label>  
+			<input id="LOFFLIMITS_ZNONE" name="setupScript,lefthandStartingOutBoundDirectionZ" type="radio" value="none"  checked>
+			<label for="LOFFLIMITS_ZNONE">none</label> 
+   			</inputs>
+ 
+            <name> </name>	
+   			<inputs> 
+			<input id="LOFFLIMITS_CH" name="setupScript,lefthandStartingOutBoundMeetAllConditions" type="hidden" value="FALSE">
+			<input id="LOFFLIMITS_C" name="setupScript,lefthandStartingOutBoundMeetAllConditions" type="checkbox" value="TRUE" >	
+			<label for="LOFFLIMITS_C">ALL conditions must be met (versus ANY)</label> 
+   			</inputs>
+
+
+
+	<note> </note>  
+
+            <name>All right hand bones must be: </name>		
+   			<inputs>
+			<input id="ROFFLIMITS_POS_X" name="setupScript,righthandStartingOutBoundPositionX" type="number" value="0" />
+   			<label for="ROFFLIMITS_POS_X">meters</label>
+
+			<input id="ROFFLIMITS_XLEFT" name="setupScript,righthandStartingOutBoundDirectionX" type="radio" value="left" >
+			<label for="ROFFLIMITS_XLEFT">left of</label> 
+			<input id="ROFFLIMITS_XRIGHT" name="setupScript,righthandStartingOutBoundDirectionX" type="radio" value="right">
+			<label for="ROFFLIMITS_XRIGHT">right of</label>  
+			<input id="ROFFLIMITS_XNONE" name="setupScript,righthandStartingOutBoundDirectionX" type="radio" value="none"  checked>
+			<label for="ROFFLIMITS_XNONE">none</label> 	</inputs>
+
+
+            <name> </name>	
+   			<inputs>
+			<input id="ROFFLIMITS_POS_Y" name="setupScript,righthandStartingOutBoundPositionY" type="number" value="0.005" />
+   			<label for="ROFFLIMITS_POS_Y">meters</label>
+
+			<input id="ROFFLIMITS_YLEFT" name="setupScript,righthandStartingOutBoundDirectionY" type="radio" value="above" >
+			<label for="ROFFLIMITS_YLEFT">above</label> 
+			<input id="ROFFLIMITS_YRIGHT" name="setupScript,righthandStartingOutBoundDirectionY" type="radio" value="below" checked>
+			<label for="ROFFLIMITS_YRIGHT">below</label>  
+			<input id="ROFFLIMITS_YNONE" name="setupScript,righthandStartingOutBoundDirectionY" type="radio" value="none"  >
+			<label for="ROFFLIMITS_YNONE">none</label> 
+<label>  &nbsp;  &nbsp;  &nbsp;   <i> (wrt plate start pos.)</i></label>
+   			</inputs>
+
+            <name> </name>	
+
+   			<inputs>
+			<input id="ROFFLIMITS_POS_Z" name="setupScript,righthandStartingOutBoundPositionZ" type="number" value="0" />
+   			<label for="ROFFLIMITS_POS_Z">meters</label>
+
+			<input id="ROFFLIMITS_ZLEFT" name="setupScript,righthandStartingOutBoundDirectionZ" type="radio" value="infront" >
+			<label for="ROFFLIMITS_ZLEFT">in front of</label> 
+			<input id="ROFFLIMITS_ZRIGHT" name="setupScript,righthandStartingOutBoundDirectionZ" type="radio" value="behind">
+			<label for="ROFFLIMITS_ZRIGHT">behind</label>  
+			<input id="ROFFLIMITS_ZNONE" name="setupScript,righthandStartingOutBoundDirectionZ" type="radio" value="none"  checked>
+			<label for="ROFFLIMITS_ZNONE">none</label>   
+   			</inputs>
+ 
+            <name> </name>	
+   			<inputs> 
+			<input id="ROFFLIMITS_CH" name="setupScript,righthandStartingOutBoundMeetAllConditions" type="hidden" value="FALSE">
+			<input id="ROFFLIMITS_C" name="setupScript,righthandStartingOutBoundMeetAllConditions" type="checkbox" value="TRUE" >	
+			<label for="ROFFLIMITS_C">ALL conditions must be met (versus ANY)</label> 
+   			</inputs>
+
+
+
+
+            <name> </name>
+
+
+
+
+ 
+       
+
+      </div> 
+     </inputcolumn> <!-- expand/collapse the window -->
+
+
+
+	<!-- Position hands in hand-target -->
+	  <inputdivider> Hand home position appearance </inputdivider>
+    
+    <inputcolumn>
+	  <div class="form-control">  
+   			<note>Asks participant to place hands within target hand-meshes to start trial.</note>    
+   			<note>Trial proceeds once the selected hands have collided with respective hand-targets:</note>
+			<name>Left hand home visual mesh:</name>
+   			<inputs>		    
+                
+                 
+			<input id="LHOMEAPP_SHAPE_HAND" name="setupScript,lefthandStartingBoundMeshShape" type="radio" value="Hand"  checked >
+			<label for="LHOMEAPP_SHAPE_HAND">Hand</label> 
+			<input id="LHOMEAPP_SHAPE_SPHERE" name="setupScript,lefthandStartingBoundMeshShape" type="radio" value="Sphere"   >
+			<label for="LHOMEAPP_SHAPE_SPHERE">Sphere</label> 
+			<input id="LHOMEAPP_SHAPE_CUBE" name="setupScript,lefthandStartingBoundMeshShape" type="radio" value="Cube"   >
+			<label for="LHOMEAPP_SHAPE_CUBE">Cube</label> 
+			<input id="LHOMEAPP_SHAPE_NONE" name="setupScript,lefthandStartingBoundMeshShape" type="radio" value="None"   >
+			<label for="LHOMEAPP_SHAPE_NONE">None</label> 
+
+
+ 
+            <br>
+			<input id="LHANDTARGETP_FLAG_H" name="setupScript,lefthandStartingBoundMeshPositionAuto" type="hidden" value="FALSE">
+			<input id="LHANDTARGETP_FLAG" name="setupScript,lefthandStartingBoundMeshPositionAuto" type="checkbox" value="TRUE" checked>
+			<label for="LHANDTARGETP_FLAG">Automatic position</label>		
+
+			<input id="LHANDTARGETS_FLAG_H" name="setupScript,lefthandStartingBoundMeshSizeAuto" type="hidden" value="FALSE">
+			<input id="LHANDTARGETS_FLAG" name="setupScript,lefthandStartingBoundMeshSizeAuto" type="checkbox" value="TRUE" checked>
+			<label for="LHANDTARGETS_FLAG">Automatic size</label>	
+
+
+	</inputs>  
+			<name>Right hand home visual mesh:</name>
+   			<inputs>		 
+
+			<input id="RHOMEAPP_SHAPE_HAND" name="setupScript,righthandStartingBoundMeshShape" type="radio" value="Hand"  checked >
+			<label for="RHOMEAPP_SHAPE_HAND">Hand</label> 
+			<input id="RHOMEAPP_SHAPE_SPHERE" name="setupScript,righthandStartingBoundMeshShape" type="radio" value="Sphere"   >
+			<label for="RHOMEAPP_SHAPE_SPHERE">Sphere</label> 
+			<input id="RHOMEAPP_SHAPE_CUBE" name="setupScript,righthandStartingBoundMeshShape" type="radio" value="Cube"   >
+			<label for="RHOMEAPP_SHAPE_CUBE">Cube</label> 
+			<input id="RHOMEAPP_SHAPE_NONE" name="setupScript,righthandStartingBoundMeshShape" type="radio" value="None"   >
+			<label for="RHOMEAPP_SHAPE_NONE">None</label> 
+
+
+            <br>
+			<input id="RHANDTARGETP_FLAG_H" name="setupScript,righthandStartingBoundMeshPositionAuto" type="hidden" value="FALSE">
+			<input id="RHANDTARGETP_FLAG" name="setupScript,righthandStartingBoundMeshPositionAuto" type="checkbox" value="TRUE" checked>
+			<label for="RHANDTARGETP_FLAG">Automatic position</label>	
+
+			<input id="RHANDTARGETS_FLAG_H" name="setupScript,righthandStartingBoundMeshSizeAuto" type="hidden" value="FALSE">
+			<input id="RHANDTARGETS_FLAG" name="setupScript,righthandStartingBoundMeshSizeAuto" type="checkbox" value="TRUE" checked>
+			<label for="RHANDTARGETS_FLAG">Automatic size</label>		
+
+   			</inputs>  
+
+
+
+
+<button class="expand-button"  type="button" onclick="toggleExpandableWindow(this,'expandableHandHomeVisual')">
+        Expand to manually define position and size and mesh color
+        </button>
+  
+        <div class="expwindow" id="expandableHandHomeVisual"> 
+            
+            
+             
+			<name>Left mesh position offset wrt to actual home [meters]:</name>
+   			<inputs>
+   			<label for="LHANDTARGET_POS_X">X:</label>
+			<input id="LHANDTARGET_POS_X" name="setupScript,lefthandStartingBoundMeshLocalPositionX" type="number" value="0" />
+			<label for="LHANDTARGET_POS_Y">Y:</label>
+			<input id="LHANDTARGET_POS_Y" name="setupScript,lefthandStartingBoundMeshLocalPositionY" type="number" value="0" />
+			<label for="LHANDTARGET_POS_Z">Z:</label>
+			<input id="LHANDTARGET_POS_Z" name="setupScript,lefthandStartingBoundMeshLocalPositionZ" type="number" value="0" />
+   			</inputs>   
+
+            <name>Left mesh size [meters]:</name>
+   			<inputs>
+   			<label for="LHANDTARGET_SIZE_X">X:</label>
+			<input id="LHANDTARGET_SIZE_X" name="setupScript,lefthandStartingBoundMeshSizeX" type="number" value="0.2" />
+			<label for="LHANDTARGET_SIZE_Y">Y:</label>
+			<input id="LHANDTARGET_SIZE_Y" name="setupScript,lefthandStartingBoundMeshSizeY" type="number" value="0.2" />
+			<label for="LHANDTARGET_SIZE_Z">Z:</label>
+			<input id="LHANDTARGET_SIZE_Z" name="setupScript,lefthandStartingBoundMeshSizeZ" type="number" value="0.2" />
+   			</inputs>    
+             
+			<name>Right mesh position offset wrt to actual home [meters]:</name>
+   			<inputs>
+   			<label for="RHANDTARGET_POS_X">X:</label>
+			<input id="RHANDTARGET_POS_X" name="setupScript,righthandStartingBoundMeshLocalPositionX" type="number" value="0" />
+			<label for="RHANDTARGET_POS_Y">Y:</label>
+			<input id="RHANDTARGET_POS_Y" name="setupScript,righthandStartingBoundMeshLocalPositionY" type="number" value="0" />
+			<label for="RHANDTARGET_POS_Z">Z:</label>
+			<input id="RHANDTARGET_POS_Z" name="setupScript,righthandStartingBoundMeshLocalPositionZ" type="number" value="0" />
+   			</inputs>   
+
+            <name>Right mesh size [meters]:</name>
+   			<inputs>
+   			<label for="RHANDTARGET_SIZE_X">X:</label>
+			<input id="RHANDTARGET_SIZE_X" name="setupScript,righthandStartingBoundMeshSizeX" type="number" value="0.2" />
+			<label for="RHANDTARGET_SIZE_Y">Y:</label>
+			<input id="RHANDTARGET_SIZE_Y" name="setupScript,righthandStartingBoundMeshSizeY" type="number" value="0.2" />
+			<label for="RHANDTARGET_SIZE_Z">Z:</label>
+			<input id="RHANDTARGET_SIZE_Z" name="setupScript,righthandStartingBoundMeshSizeZ" type="number" value="0.2" />
+   			</inputs>       
+
+
+            <name>Hand home mesh success color:</name>
+   			<inputs>
+   			<label for="HANDTARGET_COLOR_S_R">R:</label>
+			<input id="HANDTARGET_COLOR_S_R" name="setupScript,handStartingBoundMeshColorSuccessR" type="number" value="0" />
+   			<label for="HANDTARGET_COLOR_S_G">G:</label>
+			<input id="HANDTARGET_COLOR_S_G" name="setupScript,handStartingBoundMeshColorSuccessG" type="number" value="0.75" />
+   			<label for="HANDTARGET_COLOR_S_B">B:</label>
+			<input id="HANDTARGET_COLOR_S_B" name="setupScript,handStartingBoundMeshColorSuccessB" type="number" value="0.4" />
+   			<label for="HANDTARGET_COLOR_S_A">Alpha:</label>
+			<input id="HANDTARGET_COLOR_S_A" name="setupScript,handStartingBoundMeshColorSuccessAlpha" type="number" value="0.3" />
+   			</inputs>            
+			<name>Hand home mesh failure color:</name>
+   			<inputs>
+   			<label for="HANDTARGET_COLOR_U_R">R:</label>
+			<input id="HANDTARGET_COLOR_U_R" name="setupScript,handStartingBoundMeshColorUnsuccessR" type="number" value="1" />
+   			<label for="HANDTARGET_COLOR_U_G">G:</label>
+			<input id="HANDTARGET_COLOR_U_G" name="setupScript,handStartingBoundMeshColorUnsuccessG" type="number" value="0" />
+   			<label for="HANDTARGET_COLOR_U_B">B:</label>
+			<input id="HANDTARGET_COLOR_U_B" name="setupScript,handStartingBoundMeshColorUnsuccessB" type="number" value="0" />
+   			<label for="HANDTARGET_COLOR_U_A">Alpha:</label>
+			<input id="HANDTARGET_COLOR_U_A" name="setupScript,handStartingBoundMeshColorUnsuccessAlpha" type="number" value="0.3" />
+   			</inputs>    
+<name></name><inputs>
+
+
+
+                
+            <label>Success color when:</label>   
+			<input id="HANDTARGET_COLOR_CH" name="setupScript,handStartingBoundMeshColorHandsCoupled" type="radio" value="FALSE"  checked >
+			<label for="HANDTARGET_COLOR_CH">Respective hand in home</label> 
+			<input id="HANDTARGET_COLOR_C" name="setupScript,handStartingBoundMeshColorHandsCoupled" type="radio" value="TRUE"   >
+			<label for="HANDTARGET_COLOR_C">Both hands in homes</label> 
+
+
+</inputs>
+			
+            
+</div>
+                
+        
+		
+</div>
+    </inputcolumn>
+
+        
+        
+        
+</form>
+</body>
+</html>

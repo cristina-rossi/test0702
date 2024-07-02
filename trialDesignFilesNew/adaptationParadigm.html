@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>   </title>
+</head>
+<body>
+<form class="tabcontent">      
+<div class="form-control">         
+<inputcolumn>
+        
+<!-- Content: --> 
+ 
+ 
+    
+
+
+<name> Adaptation paradigm </name> 
+
+
+
+<name>Number of baseline trials:</name>
+    <inputs>
+    <input id="NT_BL" name="trialScript,paradigmBaseline" type="number" value="30" />
+    <label for="NT_BL"> (no perturbation) </label>
+    </inputs> 
+    
+<name>Number of adaptation trials - gradual portion:</name>
+    <inputs>
+    <input id="NT_AG" name="trialScript,paradigmGradual" type="number" value="60" />
+    <label for="NT_AG"> (perturbation lineraly increases from zero to value specified above) </label>
+    </inputs> 
+    <note> set "gradual portion = 0" for abrupt schedule paradigms. </note>
+    
+<name>Number of adaptation trials - full perturbation portion:</name>
+    <inputs>
+    <input id="NT_AP" name="trialScript,paradigmFullPerturbation" type="number" value="60" />
+    <label for="NT_AP"> (perturbation equals value specified above) </label>
+    </inputs> 
+    
+<name>Number of washout trials:</name>
+    <inputs>
+    <input id="NT_AP" name="trialScript,paradigmWashout" type="number" value="60" />
+    <label for="NT_AP"> (no perturbation) </label>
+    </inputs> 	
+
+    <name> </name>
+    <inputs></inputs> 	    
+
+<name>Manual override with trials.csv:</name>
+    <inputs>	    	  	    
+    <input id="NTOH" name="trialScript,paradigmManual" type="hidden" value="FALSE">
+    <input id="NTO" name="trialScript,paradigmManual" type="checkbox" value="TRUE">	
+    <label for="NTO">Override</label>	 
+    </inputs> 
+    <note>You can provide trial-by-trial gain perturbation values using a .csv file.</note>   
+    <note>Name of file: trials.csv</note>
+    <note> Fill as follows:</note>
+    <note>First column = trialScript</note>
+    <note> Second column = leftHandGainY (or desired hand and direction)</note>   
+    <note> From 3rd to last column = value of gain on each trial"</note>   
+    <note> (i.e., 3rd column -> trial 1, 2nd column -> trial 2, etc...)</note>  
+    <note> Check the "override" box above to use the trials.csv file</note>    
+
+ 
+    
+    
+ 
+<!-- End of Content --> 
+ 
+</inputcolumn> 
+</div>  
+<figurecolumn>
+ <!-- <img src="trialDesignFiles/figures/paradigmSmall-01.png"  style="width:100%"> --> 
+</figurecolumn>
+        
+</form>
+</body>
+</html>
